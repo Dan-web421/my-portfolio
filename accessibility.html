@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accessibility & Visual Design — Dr. Daniel</title>
+<meta name="description" content="Accessibility, CARP visual-design principles, and UDL approach used throughout this portfolio.">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a class="brand" href="index.html">Dr. Daniel's Page<span>.</span> <span class="visually-hidden">Home</span></a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav">
+      <span class="bar"></span>
+      <span class="visually-hidden">Menu</span>
+    </button>
+    <nav class="main-nav" id="mainNav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="teaching.html">Teaching &amp; Learning</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="accessibility.html" class="active" aria-current="page">Accessibility</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section id="accessibility-hero">
+    <div class="wrap">
+      <div class="section-head"><h1 style="margin-bottom:0;">Accessibility &amp; Inclusive Design</h1><span class="index">08</span></div>
+    </div>
+  </section>
+
+  <section id="accessibility">
+    <div class="wrap">
+      <div class="a11y-columns">
+        <div>
+          <h4>Perceivable</h4>
+          <ul>
+            <li>Meaningful alt text and SVG titles/descriptions</li>
+            <li>Captions planned for video content</li>
+            <li>Transcripts planned alongside media</li>
+            <li>Sufficient color contrast</li>
+            <li>Text alternatives for every diagram</li>
+            <li>Information never conveyed through color alone</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Operable</h4>
+          <ul>
+            <li>Full keyboard navigation</li>
+            <li>Visible focus indicators</li>
+            <li>Accessible, real buttons for every action</li>
+            <li>No interaction requires a mouse</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Understandable</h4>
+          <ul>
+            <li>Consistent navigation across every page</li>
+            <li>Clear, hierarchical headings</li>
+            <li>Plain, readable language</li>
+            <li>Predictable interaction patterns</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Robust</h4>
+          <ul>
+            <li>Semantic HTML throughout</li>
+            <li>ARIA used only where native semantics fall short</li>
+            <li>Tested against common assistive technologies</li>
+          </ul>
+        </div>
+      </div>
+      <button class="btn" id="checklistToggle" aria-expanded="false" aria-controls="a11yChecklist" style="margin-top:1.5rem;">Accessibility Checklist</button>
+      <div class="checklist" id="a11yChecklist" hidden>
+        <h4>WCAG-informed checklist implemented in this site</h4>
+        <ul>
+          <li>Skip-to-content link on every page</li>
+          <li>Semantic landmarks: header, nav, main, section, footer</li>
+          <li>Descriptive, unique page titles and a logical heading hierarchy</li>
+          <li>Visible focus outlines on every interactive element</li>
+          <li>Keyboard-operable mobile menu, quizzes, slider, buttons, and animation controls</li>
+          <li><code>prefers-reduced-motion</code> respected for all animation</li>
+          <li>Quiz feedback announced via an ARIA live region</li>
+          <li>SVG diagrams carry a title and description read by screen readers</li>
+          <li>The current page is marked in navigation with <code>aria-current="page"</code> plus bold text and an underline, not color alone</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="carp">
+    <div class="wrap">
+      <div class="section-head"><h2>CARP Principles</h2><span class="index">09</span></div>
+      <div class="carp-grid">
+        <div class="carp-card"><div class="letter">C</div><h4>Contrast</h4><p>Serif headings against sans body text, and dark ink against a light paper background, separate levels of the hierarchy at a glance.</p></div>
+        <div class="carp-card"><div class="letter">A</div><h4>Alignment</h4><p>Content sits on a single consistent left edge and a shared content width across every page, so nothing feels randomly placed.</p></div>
+        <div class="carp-card"><div class="letter">R</div><h4>Repetition</h4><p>The same header, footer, card border, and button shape repeat on every page, teaching the eye the pattern once.</p></div>
+        <div class="carp-card"><div class="letter">P</div><h4>Proximity</h4><p>Each question sits directly beside its feedback, and each diagram sits beside the text that explains it.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="udl">
+    <div class="wrap">
+      <div class="section-head"><h2>UDL (Universal Design for Learning)</h2><span class="index">10</span></div>
+      <div class="card-grid">
+        <article class="slide-card">
+          <h4>Multiple means of representation</h4>
+          <p>Every concept is presented as text, a labeled diagram, and an interactive model, so a learner can use whichever combination works best for them.</p>
+        </article>
+        <article class="slide-card">
+          <h4>Multiple means of engagement</h4>
+          <p>Sliders, clickable spectrum points, and quiz questions give the learner direct control rather than a single fixed path through the content.</p>
+        </article>
+        <article class="slide-card">
+          <h4>Multiple means of expression</h4>
+          <p>Multiple-choice, true/false, and conceptual questions let a learner demonstrate understanding in more than one format.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-row">
+    <p>&copy; 2026 Dr. Daniel. Academic and instructional-design portfolio.</p>
+    <ul class="footer-links">
+      <li><a href="accessibility.html">Accessibility</a></li>
+      <li><a href="contact.html#copyright">Copyright &amp; Fair Use</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

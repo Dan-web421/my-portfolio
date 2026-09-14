@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Dr. Daniel Mulugeta</title>
+<meta name="description" content="Contact details and copyright and fair-use policy for Daniel's portfolio.">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a class="brand" href="index.html">Dr. Daniel's Page<span>.</span> <span class="visually-hidden">Home</span></a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav">
+      <span class="bar"></span>
+      <span class="visually-hidden">Menu</span>
+    </button>
+    <nav class="main-nav" id="mainNav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="teaching.html">Teaching &amp; Learning</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="accessibility.html">Accessibility</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section id="contact-hero">
+    <div class="wrap">
+      <div class="section-head"><h1 style="margin-bottom:0;">Contact</h1><span class="index">12</span></div>
+    </div>
+  </section>
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div>
+          <p class="form-note">At the moment this form doesnt send email. It is static demonstration. To contact please use the email address beside it.</p>
+          <form id="contactForm" novalidate>
+            <div class="form-field">
+              <label for="cName">Name</label>
+              <input type="text" id="cName" name="name" autocomplete="name" required>
+            </div>
+            <div class="form-field">
+              <label for="cEmail">Email</label>
+              <input type="email" id="cEmail" name="email" autocomplete="email" required>
+            </div>
+            <div class="form-field">
+              <label for="cMessage">Message</label>
+              <textarea id="cMessage" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send</button>
+            <div class="live-region" aria-live="polite" id="contactLiveRegion"></div>
+          </form>
+        </div>
+        <div class="contact-links">
+          <dl>
+            <dt>Email</dt><dd><a href="mailto:%5BProfessional%20Email%5D">danielm@hu.edu.et</a></dd>
+            <dt>ORCID</dt><dd>http://orcid.org/0009-0002-2997-811X</dd> 
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="copyright">
+    <div class="wrap">
+      <div class="section-head"><h2>Copyright &amp; Fair Use</h2><span class="index">13</span></div>
+      <div class="measure-wide">
+        <ul>
+          <li>Original diagrams are created for this site whenever possible, rather than sourced from elsewhere.</li>
+          <li>Any external image used in the future will be properly attributed at the point of use.</li>
+          <li>Copyrighted materials are not reproduced without permission.</li>
+          <li>Openly licensed resources are used according to their specific license terms.</li>
+          <li>Educational use does not, by itself, remove copyright restrictions.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-row">
+    <p>&copy; 2026 Dr. Daniel. Academic and instructional-design portfolio.</p>
+    <ul class="footer-links">
+      <li><a href="accessibility.html">Accessibility</a></li>
+      <li><a href="contact.html#copyright">Copyright &amp; Fair Use</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — Daniel</title>
+<meta name="description" content="Interactive instructional-design artifacts: quantum confinement, surface-to-volume ratio, a formative quiz, UV-Vis spectroscopy, and electrodynamics.">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a class="brand" href="index.html">Dr. Daniel's Page<span>.</span> <span class="visually-hidden">Home</span></a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav">
+      <span class="bar"></span>
+      <span class="visually-hidden">Menu</span>
+    </button>
+    <nav class="main-nav" id="mainNav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="teaching.html">Teaching &amp; Learning</a></li>
+        <li><a href="portfolio.html" class="active" aria-current="page">Portfolio</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="accessibility.html">Accessibility</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section id="portfolio-hero">
+    <div class="wrap">
+      <div class="section-head"><h1 style="margin-bottom:0;">Instructional Design Portfolio</h1><span class="index">05</span></div>
+      <p class="measure-wide">Five artifacts below apply the same instructional-design approach to five different physics ideas: state a single learning objective, build an interactive exhibit that lets the learner manipulate the variable that matters, and close with a question that checks whether the idea transferred.</p>
+    </div>
+  </section>
+
+  <section id="artifacts">
+    <div class="wrap">
+
+      <article class="artifact" id="artifact-quantum-dots">
+        <div class="artifact-head">
+          <div>
+            <span class="fig-number">Artifact 1</span>
+            <h3>From Bulk Materials to Quantum Dots</h3>
+          </div>
+          <button class="artifact-toggle" aria-expanded="true" aria-controls="body-quantum-dots">Collapse</button>
+        </div>
+        <div class="artifact-body" id="body-quantum-dots">
+          <div class="objective-box">
+            <strong>Learning objective</strong>
+            Students will explain how reducing a material from bulk dimensions to nanoscale dimensions changes its electronic energy levels through quantum confinement.
+          </div>
+          <p>As a semiconductor crystal shrinks from a bulk chunk down toward a single nanometer-scale particle &mdash; a quantum dot &mdash; the electrons inside it become confined to a smaller and smaller space. Confining a wave to a smaller box forces its allowed energy levels further apart. Move the slider to shrink the particle and watch what happens to the spacing between energy levels.</p>
+
+          <div class="demo-panel">
+            <div class="control-row">
+              <label for="sizeSlider">Particle size</label>
+              <input type="range" id="sizeSlider" min="0" max="100" value="0" aria-describedby="sizeSliderVal">
+              <span id="sizeSliderVal" class="data">Bulk material</span>
+            </div>
+            <svg viewBox="0 0 500 220" id="confinementSvg" role="img" aria-labelledby="confTitle" aria-describedby="confDesc" style="width:100%;height:auto;">
+              <title id="confTitle">Particle size versus energy-level spacing</title>
+              <desc id="confDesc">Left panel: a shape representing the material shrinking as the slider moves. Right panel: horizontal lines representing energy levels, spreading further apart as the particle shrinks.</desc>
+              <rect id="materialShape" x="60" y="60" width="120" height="120" fill="#eef5f5" stroke="#1b7a8c" stroke-width="2"/>
+              <text x="60" y="200" font-family="IBM Plex Mono, monospace" font-size="11" fill="#3d4663">material</text>
+              <g id="energyLevels" stroke="#16213d" stroke-width="2">
+                <line x1="300" y1="30" x2="470" y2="30"/>
+                <line x1="300" y1="60" x2="470" y2="60"/>
+                <line x1="300" y1="90" x2="470" y2="90"/>
+                <line x1="300" y1="120" x2="470" y2="120"/>
+              </g>
+              <text x="300" y="215" font-family="IBM Plex Mono, monospace" font-size="11" fill="#3d4663">energy levels</text>
+            </svg>
+            <p id="confinementText" class="data" style="margin-top:0.8rem;">At bulk size, energy levels are so closely spaced they form a continuous band.</p>
+            <div class="readout-grid">
+              <div class="readout"><div class="label">Regime</div><div class="value" id="regimeReadout">Bulk</div></div>
+              <div class="readout"><div class="label">Level spacing</div><div class="value" id="spacingReadout">Continuous</div></div>
+            </div>
+          </div>
+
+          <div class="quiz-question" id="quizQuantumDots">
+            <p class="q-text">What generally happens to the energy-level spacing as a semiconductor nanostructure becomes smaller?</p>
+            <ul class="quiz-options" role="list">
+              <li><button type="button" data-correct="false">A. It decreases</button></li>
+              <li><button type="button" data-correct="true">B. It increases</button></li>
+              <li><button type="button" data-correct="false">C. It remains exactly constant</button></li>
+              <li><button type="button" data-correct="false">D. It disappears</button></li>
+            </ul>
+            <div class="feedback" hidden></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="artifact" id="artifact-surface-volume">
+        <div class="artifact-head">
+          <div>
+            <span class="fig-number">Artifact 2</span>
+            <h3>Surface-to-Volume Ratio</h3>
+          </div>
+          <button class="artifact-toggle" aria-expanded="true" aria-controls="body-surface-volume">Collapse</button>
+        </div>
+        <div class="artifact-body" id="body-surface-volume">
+          <div class="objective-box">
+            <strong>Learning objective</strong>
+            Students will explain why nanoscale materials have a relatively large surface area compared with their volume.
+          </div>
+          <p>For a cube of edge length <em>s</em>, surface area grows as <span class="data">6s&sup2;</span> while volume grows as <span class="data">s&sup3;</span>. Because volume grows faster than surface area as a cube gets bigger, the ratio of surface area to volume gets larger the smaller the cube is. Choose a cube size to see this directly.</p>
+
+          <div class="demo-panel">
+            <div class="control-row" role="group" aria-label="Choose cube size">
+              <button type="button" class="btn btn-small" data-cube="10">Large cube (10 units)</button>
+              <button type="button" class="btn btn-small" data-cube="2">Smaller cube (2 units)</button>
+              <button type="button" class="btn btn-small" data-cube="0.05">Nanoscale cube (0.05 units)</button>
+            </div>
+            <svg viewBox="0 0 320 200" id="cubeSvg" role="img" aria-label="A cube whose apparent size changes with the chosen edge length" style="width:100%;max-width:320px;height:auto;">
+              <g id="cubeGroup" transform="translate(160,110)">
+                <polygon points="-50,-50 40,-70 90,-30 0,-10" fill="#eef5f5" stroke="#1b7a8c" stroke-width="2"/>
+                <polygon points="-50,-50 0,-10 0,70 -50,10" fill="#dcecec" stroke="#1b7a8c" stroke-width="2"/>
+                <polygon points="0,-10 90,-30 90,50 0,70" fill="#c7dfdf" stroke="#1b7a8c" stroke-width="2"/>
+              </g>
+            </svg>
+            <div class="readout-grid">
+              <div class="readout"><div class="label">Edge length (s)</div><div class="value" id="edgeReadout">10</div></div>
+              <div class="readout"><div class="label">Surface area (6s&sup2;)</div><div class="value" id="areaReadout">600</div></div>
+              <div class="readout"><div class="label">Volume (s&sup3;)</div><div class="value" id="volReadout">1000</div></div>
+              <div class="readout"><div class="label">Surface / volume</div><div class="value" id="ratioReadout">0.60</div></div>
+            </div>
+          </div>
+
+          <div class="quiz-question" id="quizSurfaceVolume">
+            <p class="q-text">Why can nanoparticles exhibit enhanced surface-related properties?</p>
+            <ul class="quiz-options" role="list">
+              <li><button type="button" data-correct="false">A. Because they weigh less than bulk material</button></li>
+              <li><button type="button" data-correct="true">B. Because a much larger fraction of their atoms sit at or near the surface</button></li>
+              <li><button type="button" data-correct="false">C. Because their volume increases faster than their surface area</button></li>
+              <li><button type="button" data-correct="false">D. Because they no longer obey classical physics</button></li>
+            </ul>
+            <div class="feedback" hidden></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="artifact" id="artifact-quiz">
+        <div class="artifact-head">
+          <div>
+            <span class="fig-number">Artifact 3</span>
+            <h3>Nanomaterials Formative Quiz</h3>
+          </div>
+          <button class="artifact-toggle" aria-expanded="true" aria-controls="body-quiz">Collapse</button>
+        </div>
+        <div class="artifact-body" id="body-quiz">
+          <div class="objective-box">
+            <strong>Learning objective</strong>
+            Students will check their conceptual understanding across nanoscale dimensions, confinement, surface-to-volume ratio, characterization, and optical properties.
+          </div>
+          <div id="formativeQuiz"></div>
+          <div class="quiz-score-bar">
+            <span>Score: <span id="quizScore" class="data">0 / 6</span></span>
+            <button type="button" class="btn btn-small" id="quizReset">Reset quiz</button>
+          </div>
+          <div class="live-region" aria-live="polite" id="quizLiveRegion"></div>
+        </div>
+      </article>
+
+      <article class="artifact" id="artifact-uvvis">
+        <div class="artifact-head">
+          <div>
+            <span class="fig-number">Artifact 4</span>
+            <h3>Reading a UV-Vis Spectrum</h3>
+          </div>
+          <button class="artifact-toggle" aria-expanded="true" aria-controls="body-uvvis">Collapse</button>
+        </div>
+        <div class="artifact-body" id="body-uvvis">
+          <div class="objective-box">
+            <strong>Learning objective</strong>
+            Students will read wavelength and absorbance off a UV-Vis spectrum and connect a peak to what it can and cannot tell you about a material.
+          </div>
+          <p>Click or tab to a point on the curve below. UV-Vis spectroscopy measures optical absorption; depending on the material and the analysis applied, a spectrum can provide information related to electronic transitions and general optical properties &mdash; it does not, by itself, identify a compound or prove a mechanism.</p>
+          <div class="demo-panel">
+            <svg viewBox="0 0 500 240" class="spectrum-svg" id="spectrumSvg" role="img" aria-label="An illustrative UV-Vis absorbance curve with five selectable points">
+              <line x1="50" y1="200" x2="480" y2="200" stroke="#16213d" stroke-width="1.5"/>
+              <line x1="50" y1="20" x2="50" y2="200" stroke="#16213d" stroke-width="1.5"/>
+              <text x="230" y="228" font-family="IBM Plex Mono, monospace" font-size="11" fill="#3d4663">Wavelength (nm)</text>
+              <text x="12" y="115" font-family="IBM Plex Mono, monospace" font-size="11" fill="#3d4663" transform="rotate(-90 12 115)">Absorbance</text>
+              <path d="M60,195 C120,190 160,60 210,40 C260,20 300,150 350,180 C400,196 440,198 470,199" fill="none" stroke="#c97b2e" stroke-width="2.5"/>
+              <circle class="spectrum-point" tabindex="0" role="button" data-wl="300" data-abs="0.10" data-note="Baseline region: little absorption at this wavelength." cx="80" cy="192" r="7"></circle>
+              <circle class="spectrum-point" tabindex="0" role="button" data-wl="340" data-abs="0.35" data-note="Absorbance is rising &mdash; the material is beginning to absorb light strongly here." cx="150" cy="140" r="7"></circle>
+              <circle class="spectrum-point" tabindex="0" role="button" data-wl="380" data-abs="0.92" data-note="Peak absorbance: this wavelength is absorbed most strongly, consistent with an electronic transition around this energy." cx="220" cy="35" r="7"></circle>
+              <circle class="spectrum-point" tabindex="0" role="button" data-wl="430" data-abs="0.48" data-note="Absorbance is falling off past the peak." cx="300" cy="120" r="7"></circle>
+              <circle class="spectrum-point" tabindex="0" role="button" data-wl="500" data-abs="0.06" data-note="Low absorbance again at longer wavelength." cx="400" cy="190" r="7"></circle>
+            </svg>
+            <div class="readout-grid">
+              <div class="readout"><div class="label">Wavelength</div><div class="value" id="wlReadout">&mdash;</div></div>
+              <div class="readout"><div class="label">Absorbance</div><div class="value" id="absReadout">&mdash;</div></div>
+            </div>
+            <p id="spectrumNote" style="margin-top:0.8rem;">Select a point on the curve to see its reading and interpretation.</p>
+          </div>
+          <div class="quiz-question" id="quizUvVis">
+            <p class="q-text">What information can an absorption spectrum provide about a material?</p>
+            <ul class="quiz-options" role="list">
+              <li><button type="button" data-correct="false">A. The exact chemical identity of the material with no other evidence</button></li>
+              <li><button type="button" data-correct="true">B. Information about optical absorption that, with further analysis, can relate to electronic transitions and optical properties</button></li>
+              <li><button type="button" data-correct="false">C. The precise atomic structure of the material</button></li>
+              <li><button type="button" data-correct="false">D. Nothing useful without a second instrument</button></li>
+            </ul>
+            <div class="feedback" hidden></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="artifact" id="artifact-electrodynamics">
+        <div class="artifact-head">
+          <div>
+            <span class="fig-number">Artifact 5</span>
+            <h3>Visual Electrodynamics</h3>
+          </div>
+          <button class="artifact-toggle" aria-expanded="true" aria-controls="body-electrodynamics">Collapse</button>
+        </div>
+        <div class="artifact-body" id="body-electrodynamics">
+          <div class="objective-box">
+            <strong>Learning objective</strong>
+            Students will identify that the electric field, magnetic field, and direction of propagation of an electromagnetic wave are mutually perpendicular.
+          </div>
+          <div class="demo-panel">
+            <div class="ed-controls">
+              <button type="button" class="btn btn-small" id="edPlay">Play</button>
+              <button type="button" class="btn btn-small" id="edPause">Pause</button>
+              <button type="button" class="btn btn-small" id="edReset">Reset</button>
+            </div>
+            <svg viewBox="0 0 500 220" role="img" aria-labelledby="edTitle" aria-describedby="edDesc" style="width:100%;height:auto;">
+              <title id="edTitle">Electromagnetic wave propagation</title>
+              <desc id="edDesc">An electric field oscillating in the vertical plane and a magnetic field oscillating in the horizontal plane, both perpendicular to each other and to the horizontal axis of propagation, labeled E, B, and direction of travel.</desc>
+              <line x1="20" y1="110" x2="480" y2="110" stroke="#16213d" stroke-width="1.5" marker-end="url(#arrowHead)"/>
+              <defs>
+                <marker id="arrowHead" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+                  <path d="M0,0 L6,3 L0,6 z" fill="#16213d"/>
+                </marker>
+              </defs>
+              <path id="eField" d="M20,110 Q60,20 100,110 T180,110 T260,110 T340,110 T420,110" fill="none" stroke="#1b7a8c" stroke-width="2.5"/>
+              <path id="bField" d="M20,110 Q60,110 100,165 T180,110 T260,55 T340,110 T420,110" fill="none" stroke="#c97b2e" stroke-width="2.5" stroke-dasharray="6 4"/>
+              <text x="430" y="60" font-family="IBM Plex Mono, monospace" font-size="13" fill="#1b7a8c">E</text>
+              <text x="430" y="180" font-family="IBM Plex Mono, monospace" font-size="13" fill="#c97b2e">B</text>
+              <text x="370" y="128" font-family="IBM Plex Mono, monospace" font-size="12" fill="#16213d">travel direction</text>
+            </svg>
+            <p style="margin-top:0.8rem;">The solid teal curve represents the electric field oscillating in one plane; the dashed amber curve represents the magnetic field oscillating in the perpendicular plane. Both are perpendicular to the direction the wave travels, shown by the horizontal arrow. Field identity is shown through line style and labels, not color alone. This animation respects your operating system's reduced-motion setting.</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="h5p">
+    <div class="wrap">
+      <div class="section-head"><h2>H5P Interactive Learning</h2><span class="index">06</span></div>
+      <p class="measure-wide">Interactive H5P content prepared later in the courses LMS will be embedded here once URLs are available. But now they are placed here as a demonstration</p>
+      <div class="card-grid">
+        <div class="placeholder-card">
+          <h4>Interactive Video</h4>
+          <button class="btn btn-small" disabled>Open Interactive Video</button>
+        </div>
+        <div class="placeholder-card">
+          <h4>Course Presentation</h4>
+          <button class="btn btn-small" disabled>Open Course Presentation</button>
+        </div>
+        <div class="placeholder-card">
+          <h4>Question Set</h4>
+          <button class="btn btn-small" disabled>Open Question Set</button>
+        </div>
+      </div>
+      <!--
+        To embed real H5P content once a URL exists, replace this comment with:
+        <iframe src="H5P_URL_HERE" width="100%" height="500" frameborder="0"
+                allowfullscreen="allowfullscreen" title="H5P interactive activity"></iframe>
+      -->
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-row">
+    <p>&copy; 2026 Dr. Daniel. Academic and instructional-design portfolio.</p>
+    <ul class="footer-links">
+      <li><a href="accessibility.html">Accessibility</a></li>
+      <li><a href="contact.html#copyright">Copyright &amp; Fair Use</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
